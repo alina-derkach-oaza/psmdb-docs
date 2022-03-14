@@ -1,0 +1,31 @@
+.. _PSMDB-4.4.13-13:
+
+================================================================================
+*Percona Server for MongoDB* 4.4.13-13
+================================================================================
+
+:Date: March 20, 2022
+:Installation: `Installing Percona Server for MongoDB <https://www.percona.com/doc/percona-server-for-mongodb/4.4/install/index.html>`_
+
+Percona Server for MongoDB 4.4.13-13 is an enhanced, open source, and highly-scalable database that is a
+fully-compatible, drop-in replacement for MongoDB 4.4.13 Community Edition.
+It supports MongoDB 4.4.13 protocols and drivers.
+
+Release Highlights
+==================
+
+Added support for Keys Management Interoperability Protocol (KMIP). Now users can store encryption keys in their favorite KMIP-compatible key manager to setup encryption at rest.
+
+* `SERVER-63203 <https://jira.mongodb.org/browse/SERVER-63203>`_ - Fixed the issue with chunk splitting when the number of dcuments is high due to small shard keys
+* `SERVER-62065 <https://jira.mongodb.org/browse/SERVER-62065>`_ - Added the repairShardedCollectionChunksHistory command to restore history fields for some chunks. This aims to fix broken snapshot reads and distributed transactions.
+* `SERVER-59754 <https://jira.mongodb.org/browse/SERVER-59754>`_ - Fixed incorrect logging of queryHash/planCacheKey for operations that share the same $lookup shape
+* `SERVER-55483 <https://jira.mongodb.org/browse/SERVER-55483>`_ - Added a new startup parameter that skips verifying the table logging settings on restarting as a replica set node from the standalone mode during the restore. This speeds up the restore process.
+  
+Find the full list of changes in the `MongoDB 4.4.13 Community Edition Release notes <https://docs.mongodb.com/manual/release-notes/4.4/#4.4.13---mar-7--2022>`_.
+
+New Features
+================================================================================
+
+* :jirabug:`PSMDB-971`: Added support for :abbr:`KMIP (Keys Management Interoperability Protocol)` encryption. Now users can store encryption keys in their favorite KMIP-compatible key manager to setup encryption at rest.
+
+
